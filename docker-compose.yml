@@ -1,0 +1,14 @@
+services:
+  openclaw-bot:
+    image: chillingdaisy/openclaw-easy:v1.4
+    container_name: OpanClawContainer
+    ports:
+      - "18789:18789"
+    volumes:
+      - ./openclaw:/root/.openclaw
+    environment:
+      - OPENCLAW_GATEWAY_TOKEN=token_openclaw
+      - GEMINI_API_KEY=<구글 API 키>
+      - TELEGRAM_BOT_TOKEN=<텔레그램 봇 토큰>
+      - TELEGRAM_ALLOWED_USERS=<텔레그램 사용자 ID>
+      - BRAVE_API_KEY=<브레이브 API 키>
